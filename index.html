@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <style>
+       
+            .time{
+                width:300px;
+                margin: 300px;
+                text-align: center;
+                font-size:50px;
+                border-style: double;
+                border-radius: 30px;
+                border-color: rgb(205, 8, 231);
+
+                background-color: aquamarine;
+            }
+            body{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wapper">
+       <center> <div id="clock" class="time">
+      10:10:01            
+        </div></center>
+    </div>
+<script>
+    
+setInterval(displayclock,500)
+function displayclock(){
+
+    var time = new Date();
+    var hrs = time.getHours();
+    var min = time.getMinutes();
+    var sec = time.getSeconds();
+    var at = 'AM'
+    if(hrs>12){
+        at = 'PM';
+    }
+    if (hrs>12){
+        hrs = hrs - 12;
+
+    }
+
+    if (hrs == 0){
+        hrs = 12;
+    }
+    if ( hrs < 10){
+        hrs = '0'+hrs;
+    }
+
+    if ( min < 10){
+        min = '0'+min;
+    }
+    if ( sec < 10){
+        sec = '0'+sec;
+    }
+
+    document.getElementById('clock').innerHTML = hrs + ':' + min + ':' + sec+' '+at;
+
+}
+
+</script>
+    </body>
+</html>
